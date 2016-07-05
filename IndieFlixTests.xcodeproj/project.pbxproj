@@ -14,6 +14,9 @@
 		55B4344E1D25C96700C1BCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4344D1D25C96700C1BCB7 /* Assets.xcassets */; };
 		55B434591D25C96700C1BCB7 /* IndieFlixTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B434581D25C96700C1BCB7 /* IndieFlixTestsTests.m */; };
 		55B434641D25C96700C1BCB7 /* IndieFlixTestsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B434631D25C96700C1BCB7 /* IndieFlixTestsUITests.m */; };
+		55B434731D25C9CA00C1BCB7 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B434721D25C9CA00C1BCB7 /* MainTableViewController.m */; };
+		55B434761D25CAC700C1BCB7 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B434751D25CAC700C1BCB7 /* MainTableViewCell.m */; };
+		55E1B7521D25EE140034CAA3 /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E1B7511D25EE140034CAA3 /* MainCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		55B4345F1D25C96700C1BCB7 /* IndieFlixTestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndieFlixTestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B434631D25C96700C1BCB7 /* IndieFlixTestsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndieFlixTestsUITests.m; sourceTree = "<group>"; };
 		55B434651D25C96700C1BCB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B434711D25C9CA00C1BCB7 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		55B434721D25C9CA00C1BCB7 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		55B434741D25CAC700C1BCB7 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		55B434751D25CAC700C1BCB7 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		55E1B7501D25EE140034CAA3 /* MainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
+		55E1B7511D25EE140034CAA3 /* MainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,12 @@
 				55B434451D25C96700C1BCB7 /* AppDelegate.m */,
 				55B434471D25C96700C1BCB7 /* ViewController.h */,
 				55B434481D25C96700C1BCB7 /* ViewController.m */,
+				55B434711D25C9CA00C1BCB7 /* MainTableViewController.h */,
+				55B434721D25C9CA00C1BCB7 /* MainTableViewController.m */,
+				55B434741D25CAC700C1BCB7 /* MainTableViewCell.h */,
+				55B434751D25CAC700C1BCB7 /* MainTableViewCell.m */,
+				55E1B7501D25EE140034CAA3 /* MainCollectionViewCell.h */,
+				55E1B7511D25EE140034CAA3 /* MainCollectionViewCell.m */,
 				55B4344A1D25C96700C1BCB7 /* Main.storyboard */,
 				55B4344D1D25C96700C1BCB7 /* Assets.xcassets */,
 				55B4344F1D25C96700C1BCB7 /* Info.plist */,
@@ -266,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B434731D25C9CA00C1BCB7 /* MainTableViewController.m in Sources */,
 				55B434491D25C96700C1BCB7 /* ViewController.m in Sources */,
 				55B434461D25C96700C1BCB7 /* AppDelegate.m in Sources */,
 				55B434431D25C96700C1BCB7 /* main.m in Sources */,
+				55B434761D25CAC700C1BCB7 /* MainTableViewCell.m in Sources */,
+				55E1B7521D25EE140034CAA3 /* MainCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +504,7 @@
 				55B4346A1D25C96700C1BCB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55B4346B1D25C96700C1BCB7 /* Build configuration list for PBXNativeTarget "IndieFlixTestsTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +513,7 @@
 				55B4346D1D25C96700C1BCB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55B4346E1D25C96700C1BCB7 /* Build configuration list for PBXNativeTarget "IndieFlixTestsUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +522,7 @@
 				55B434701D25C96700C1BCB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
