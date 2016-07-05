@@ -34,7 +34,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Collection View Helper Methods
+- (UICollectionView *)getCollectionViewInSection:(NSInteger)section {
+    
+    MainTableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+    UICollectionView *colView = tableCell.collectionView;
+    return colView;
+    
+}
+
+- (void)refreshAllCollectionViews {
+    for (int i = 0; i < [self.tableView numberOfSections]; i++) {
+        //loop through table view section
+        //get the cell in each section, get its table view, update its layout
+        [[self getCollectionViewInSection:i].collectionViewLayout invalidateLayout];
+    }
+    [super viewDidLayoutSubviews];
+}
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -50,6 +68,7 @@
     if (indexPath.section != self.highlightedCell.section) {
         return 200;
     } else {
+        //if highlighted, give a larger row
         return 399;
     }
     
@@ -86,12 +105,7 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
-- (UICollectionView *)getCollectionViewInSection:(NSInteger)section {
-    MainTableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-    UICollectionView *colView = tableCell.collectionView;
-    return colView;
-    
-}
+#pragma mark - Collection view data source
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
    //the index path's "section" is refering to the section in the collection view, which is 0
     //but we want the section in the table view
@@ -114,6 +128,7 @@
     return colCell;
 }
 
+#pragma mark - Collection View Flow Layout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     //the index path's "section" is refering to the section in the collection view, which is 0
     //but we want the section in the table view
@@ -129,12 +144,17 @@
     }
  
 }
+
+#pragma mark - Table View Cell Delegate
+//Respond to Cell Being Highlighted by Enlarging it
 - (void)didHighlightWithIndexPath:(NSIndexPath *)indexPath {
    
+    //set the updated cell
     self.highlightedCell = indexPath;
     
     
     //reload table and colleciton view
+    //this will cause the cell to adjust size
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     [self refreshAllCollectionViews];
@@ -146,14 +166,7 @@
 }
 
 
-- (void)refreshAllCollectionViews {
-    for (int i = 0; i < [self.tableView numberOfSections]; i++) {
-        //loop through table view section
-        //get the cell in each section, get its table view, update its layout
-       [[self getCollectionViewInSection:i].collectionViewLayout invalidateLayout];
-    }
-     [super viewDidLayoutSubviews];
-}
+
 
 /*
 // Override to support conditional editing of the table view.
